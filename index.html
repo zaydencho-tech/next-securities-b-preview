@@ -109,6 +109,8 @@ button:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid var(-
 .partner-current-card{position:absolute;left:0;top:0;height:var(--partner-frame-height,986px)}
 .partner .partner-axis{top:var(--partner-axis-top,160px);height:var(--partner-axis-height,590px)}
 .partner .partner-logo{top:var(--partner-logo-top,272px);background:#fff}
+.partner .partner-logo[data-partner-kind="technology"]{font-size:58px;line-height:1}
+.partner .partner-logo .partner-logo-ko{margin-top:14px;font-family:"Pretendard Variable",sans-serif;font-size:16px;font-weight:500;line-height:1.5;letter-spacing:-.2px;color:#686c74}
 .partner .partner-logo[data-illustrative="true"]{left:128px;width:416px;font-size:76px;line-height:.95;letter-spacing:-1.6px}
 .partner .partner-quote{top:var(--partner-quote-top,282px)}
 .partner-illustrative-note{position:absolute;left:674px;top:calc(var(--partner-quote-top,282px) - 40px);margin:0;font-family:"Barlow Semi Condensed",sans-serif;font-size:16px;font-weight:600;line-height:1.3;letter-spacing:1.6px;color:#686c74}
@@ -130,6 +132,7 @@ button:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid var(-
 .partner[data-partner-layout="list"] .partner-controls{display:none}
 .partner[data-partner-layout="list"] .partner-reveal-ink{transform:none!important;opacity:1!important;will-change:auto}
 @media(prefers-reduced-motion:reduce){.partner-reveal-ink,.partner-testimonials-content{will-change:auto}.partner-reading-char{color:#080808!important}}
+@media(max-width:767px){.partner .partner-logo .partner-logo-ko{margin-top:12px;font-size:13px}}
 
 /* Wide cards gather sequentially into five readable columns. */
 .editorial-fold{--fold-card-width:600px;--fold-final-card-width:376px;--fold-card-gap:40px;--fold-final-card-gap:32px;position:absolute;left:0;top:4540px;width:1920px;height:var(--fold-block-height,3600px)}
@@ -1387,7 +1390,7 @@ body[data-page][data-nav-state] #navigation-overlay #full-menu{
           <h2 class="section-label" id="partner-heading">Testimonials</h2>
           <div class="partner-testimonial-card partner-current-card">
             <div class="partner-axis" aria-hidden="true"></div>
-            <p class="partner-logo" aria-label="Mirae Asset"><span>MIRAE</span><span>ASSET</span></p>
+            <p class="partner-logo" data-partner-kind="technology" aria-label="Technology Partner · 기술 파트너"><span>Technology</span><span>Partner</span><span class="partner-logo-ko" lang="ko">기술 파트너</span></p>
             <p class="partner-illustrative-note" id="partner-illustrative-note" hidden>ILLUSTRATIVE TESTIMONIAL</p>
             <blockquote class="partner-quote" id="partner-quote" lang="en" aria-live="polite" aria-atomic="true"><p>We have collaborated with Next Securities on high-frequency trading infrastructure for years. Their 0.012ms ultra-low latency execution and 99.999% SLA stability consistently ensure seamless operations, backed by unmatched AI intelligence and institutional-grade security</p></blockquote>
             <div class="partner-controls" aria-label="파트너 인용문 보기">
@@ -3519,7 +3522,7 @@ function t(t,i,e){return Math.max(t,Math.min(i,e))}var i=class{isRunning=!1;valu
   // The first passage is the supplied quotation. The other two are visibly
   // identified as illustrative copy, without attributing them to real companies.
   const testimonials=[
-    {logo:['MIRAE','ASSET'],name:'Mirae Asset',illustrative:false,text:'We have collaborated with Next Securities on high-frequency trading infrastructure for years. Their 0.012ms ultra-low latency execution and 99.999% SLA stability consistently ensure seamless operations, backed by unmatched AI intelligence and institutional-grade security'},
+    {logo:['Technology','Partner'],name:'Technology Partner · 기술 파트너',kind:'technology',subtitle:'기술 파트너',illustrative:false,text:'We have collaborated with Next Securities on high-frequency trading infrastructure for years. Their 0.012ms ultra-low latency execution and 99.999% SLA stability consistently ensure seamless operations, backed by unmatched AI intelligence and institutional-grade security'},
     {logo:['TRADING','PARTNER'],name:'Trading Partner — illustrative testimonial',illustrative:true,text:'Next Securities brings clarity to a complex trading environment. From market data to execution, the connected workflow helps our team respond with confidence. We value a platform that combines thoughtful technology with a consistent experience across markets.'},
     {logo:['PLATFORM','PARTNER'],name:'Platform Partner — illustrative testimonial',illustrative:true,text:'A resilient trading platform is built on more than speed. Next Securities gives our operations team a clear view of the systems behind every transaction. That focus on continuity, integration and transparency helps us plan for growth without adding unnecessary complexity.'}
   ];
@@ -3588,7 +3591,13 @@ function t(t,i,e){return Math.max(t,Math.min(i,e))}var i=class{isRunning=!1;valu
     metaIndex=value;
     const testimonial=testimonials[value];
     logo.replaceChildren(...testimonial.logo.map(text=>{const span=document.createElement('span');span.textContent=text;return span;}));
+    if(testimonial.subtitle) {
+      const subtitle=document.createElement('span');
+      subtitle.className='partner-logo-ko';subtitle.lang='ko';subtitle.textContent=testimonial.subtitle;
+      logo.append(subtitle);
+    }
     logo.setAttribute('aria-label',testimonial.name);
+    logo.dataset.partnerKind=testimonial.kind||'';
     logo.dataset.illustrative=String(testimonial.illustrative);
     note.hidden=!(testimonial.illustrative||testimonials[index].illustrative);
     number.textContent=String(value+1).padStart(2,'0');
