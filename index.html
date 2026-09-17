@@ -983,6 +983,7 @@ body[data-page][data-nav-state] #navigation-overlay #full-menu{
 #stage .line-card .symbol-art{position:absolute;inset:0;width:100%;height:100%;display:grid;place-items:center;transform:none;isolation:isolate}
 #stage .line-card .line-graphic{display:block;width:78%;height:78%;overflow:visible;fill:none;stroke:currentColor;stroke-linecap:butt;stroke-linejoin:round;shape-rendering:geometricPrecision}
 #stage .about :is(#ai-trading-card,#infrastructure-card)::after{content:"";position:absolute;inset:0;border:1px solid #989ba4;z-index:3;pointer-events:none}
+#stage #business-card::after{content:"";position:absolute;inset:0;border:1px solid #111;z-index:3;pointer-events:none}
 #stage #business-card .line-graphic{stroke-width:var(--business-stroke-width,2.2px)}
 #stage #business-card .line-graphic :is(path,circle,ellipse,line,polyline,polygon,rect):not([stroke="none"]){stroke-width:inherit;stroke-opacity:1}
 @media(forced-colors:active){#stage .symbol-card.line-card{background:Canvas;color:CanvasText}#stage .line-graphic [data-role="accent"]{fill:Highlight}}
