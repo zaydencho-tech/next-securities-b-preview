@@ -169,45 +169,41 @@ body[data-fold-static="true"] .editorial-description{opacity:1!important;visibil
 .editorial-fold[data-static-layout="true"] .editorial-description h3{font-size:48px}
 .editorial-fold[data-static-layout="true"] .editorial-image{top:178px;width:100%;height:340px}
 
-/* Two-column editorial directory followed by a scroll-filled signature. */
-.site-footer{--footer-motto-top:806px;position:absolute;left:96px;top:6868px;width:1728px;height:1112px;color:#09090b}
-.footer-content{position:relative;width:100%;height:1112px;border-top:1px solid #a6a8ad;transform:translateY(var(--footer-pin,0px))}
-.site-footer h2,.site-footer p{margin:0}
+/* Both routes are built from footer.html and share this 1728-unit composition. */
+.viewport{--footer-height:576px}
+.site-footer{--footer-motto-top:340px;position:absolute;left:96px;top:6868px;width:1728px;height:var(--footer-height);color:#09090b;background:#fff}
+.footer-content{position:relative;width:100%;height:var(--footer-height);border-top:1px solid #989ba4;transform:translateY(var(--footer-pin,0px));background:#fff}
+.site-footer p{margin:0}
 .site-footer a{color:inherit;text-decoration:none}
 .site-footer button{appearance:none;border:0;border-radius:0;padding:0;background:transparent;color:inherit;text-align:left;font:inherit;cursor:pointer}
 .site-footer a:hover,.site-footer button:hover{color:var(--accent)}
-.footer-introduction{position:absolute;left:40px;top:60px;width:512px}
-.footer-introduction h2{font-size:20px;font-weight:700;line-height:1.5;letter-spacing:-.45px}
-.footer-introduction p{margin-top:8px;font-size:17px;line-height:1.6;letter-spacing:-.35px;word-break:keep-all}
-.footer-directory{position:absolute;left:856px;top:48px;width:824px;display:grid;grid-template-columns:1fr 1fr;gap:32px}
-.footer-directory a,.footer-directory button{display:flex;align-items:center;width:100%;height:60px;border-bottom:1px solid #aeb0b5;font-size:17px;line-height:1.4}
-.footer-brand{position:absolute;left:40px;top:352px;display:block;width:240px;height:54px}
-.footer-brand svg{display:block;width:100%;height:100%}
-.footer-search{position:absolute;left:40px;top:450px;display:flex;align-items:center;width:480px;height:42px;border-bottom:1px solid #aeb0b5;padding-bottom:10px}
-.footer-search input{min-width:0;width:100%;border:0;border-radius:0;background:transparent;font:400 20px/1.5 "Pretendard Variable",sans-serif;color:#15171b;padding:0}
-.footer-search input::placeholder{color:#b4b6bc}
-.footer-search button{display:grid;place-items:center;flex-shrink:0;width:30px;height:30px;padding:3px}
-.footer-search svg{width:22px;height:22px}
-.site-footer .search-status{position:absolute;left:40px;top:504px;max-width:520px;font-size:15px;line-height:1.5;color:#656872}
-.footer-support-links{position:absolute;left:856px;top:386px;display:grid;grid-template-columns:248px 340px;gap:36px}
-.footer-support-links button{display:block;min-height:44px;font-size:16px;line-height:1.5;letter-spacing:-.25px;white-space:nowrap}
-.footer-socials{position:absolute;right:48px;top:398px;display:flex;align-items:center;gap:22px}
-.footer-socials>span{display:grid;place-items:center;width:20px;height:20px}
-.footer-socials svg{width:20px;height:20px}
-.footer-social-word{font-family:Arial,sans-serif;font-size:18px;font-weight:700;line-height:1}
-.footer-information{position:absolute;left:32px;right:32px;top:660px;font-size:13px;line-height:1.65;letter-spacing:-.1px;color:#73767c}
-.footer-bottomline{position:absolute;left:0;right:0;top:720px;border-top:1px solid #a6a8ad;padding:22px 32px 0;display:grid;grid-template-columns:824px 1fr auto;gap:0;font-size:13px;line-height:1.5;color:#74767c}
-.footer-bottomline address{font:inherit;white-space:nowrap}
-.footer-policies{display:flex;gap:32px;align-items:flex-start;white-space:nowrap}
-/* Extend the gradient's paint box below Barlow's descenders without moving
-   the baseline or arrow. Overflow alone cannot extend a text-clipped background. */
-.site-footer .footer-motto{position:absolute;left:40px;top:var(--footer-motto-top);width:max-content;max-width:calc(100% - 260px);padding-bottom:.16em;font-family:"Barlow Semi Condensed",sans-serif;font-size:208px;font-weight:700;line-height:1;letter-spacing:-4px;white-space:nowrap;color:#e5e5e7;background:linear-gradient(to right,#09090b 0%,#09090b var(--footer-fill,0%),#e5e5e7 var(--footer-fill,0%),#e5e5e7 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-/* Barlow's complete ink, including the y descender, centers 131.78px below
-   its line-box top; the arrow's painted center is 72.44px into its 148px box. */
-.site-footer .back-to-top{position:absolute;right:56px;top:calc(var(--footer-motto-top) + 59.35px);width:148px;height:148px;color:var(--accent)}
+.site-footer :is(a,button):focus-visible{outline:2px solid var(--accent);outline-offset:5px}
+.footer-support-links{position:absolute;left:856px;right:40px;top:56px;display:grid;grid-template-columns:400px 1fr;gap:36px}
+.footer-support-links button{display:block;min-height:42px;font-size:16px;line-height:1.5;letter-spacing:-.25px;white-space:nowrap}
+.footer-information{position:absolute;left:32px;right:32px;top:244px;font-size:13px;line-height:1.55;letter-spacing:-.1px;color:#565d67}
+.footer-bottomline{position:absolute;left:0;right:0;top:302px;border-top:1px solid #989ba4;padding:22px 32px 0;display:grid;grid-template-columns:824px 1fr;font-size:13px;line-height:1.5;color:#565d67}
+.footer-policies{display:flex;gap:54px;align-items:flex-start;white-space:nowrap}
+.site-footer .footer-motto{position:absolute;left:40px;top:var(--footer-motto-top);width:max-content;max-width:calc(100% - 260px);padding-bottom:.115em;font-family:"Barlow Semi Condensed",sans-serif;font-size:208px;font-weight:700;line-height:1;letter-spacing:-4px;white-space:nowrap;color:#e5e5e7;background:linear-gradient(to right,#09090b 0%,#09090b var(--footer-fill,0%),#e5e5e7 var(--footer-fill,0%),#e5e5e7 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.site-footer .back-to-top{position:absolute;right:84px;top:calc(var(--footer-motto-top) + 59.35px);width:148px;height:148px;color:var(--accent);transition:transform .35s var(--refined-ease)}
+.site-footer .back-to-top:hover{transform:translate(4px,-4px)}
 .back-to-top svg{display:block;width:100%;height:100%}
+.newsroom-footer-frame{position:relative;height:calc(var(--footer-height) * var(--desktop-scale,1));margin-top:48px}
+#newsroom-contact{top:0;left:calc(var(--desktop-left,0px) + 96px * var(--desktop-scale,1));transform:scale(var(--desktop-scale,1));transform-origin:top left;--footer-fill:100%}
 body[data-reveal-static="true"] .footer-motto{--footer-fill:100%!important}
-@media(prefers-reduced-motion:reduce){.footer-motto{--footer-fill:100%!important}}
+@media(max-width:767px){
+  :is(#stage,#newsroom-page) footer.site-footer{position:relative!important;inset:auto!important;width:100%;height:auto!important;margin-bottom:0!important;padding-bottom:30px;transform:none!important}
+  .newsroom-footer-frame{height:auto;margin-top:24px}
+  .site-footer .footer-content{height:auto;display:flex;flex-direction:column;gap:26px;padding-top:26px;transform:none}
+  .footer-content > :not(.back-to-top){position:relative!important;inset:auto!important;width:100%;height:auto;max-width:100%;margin:0;transform:none}
+  .footer-support-links{grid-template-columns:1fr 1fr;gap:18px}
+  .footer-support-links button{min-height:44px;font-size:11px;line-height:1.6;white-space:normal;word-break:keep-all;overflow-wrap:break-word}
+  .footer-information{font-size:10px;line-height:1.8}
+  .footer-bottomline{display:flex;flex-direction:column;gap:12px;padding:20px 0 0;font-size:10px;line-height:1.6}
+  .footer-policies{flex-wrap:wrap;gap:12px;white-space:normal}
+  .site-footer .footer-motto{width:calc(100% - 38px);padding:0 0 .14em;font-size:clamp(32px,11vw,78px);line-height:1;letter-spacing:-1px;white-space:nowrap;color:#09090b;background:none;-webkit-text-fill-color:#09090b}
+  .site-footer .back-to-top{inset:auto 0 5px auto;width:30px;height:30px}
+}
+@media(prefers-reduced-motion:reduce){.footer-motto{--footer-fill:100%!important}.site-footer .back-to-top{transition:none}}
 @media(forced-colors:active){.site-footer .footer-motto{background:none;-webkit-text-fill-color:CanvasText;color:CanvasText}}
 
 /* Panels are placed in the fixed, 1920-unit navigation overlay by the page controller. */
@@ -465,28 +461,7 @@ body[data-reveal-static="true"] .title-wipe-rectangle{visibility:hidden}
 .business-option:hover .business-name{transform:translateX(4px)}
 .business-option:hover::after{transform:translate(3px,-3px)}
 #business-card{top:280px}
-.site-footer{height:960px;--footer-motto-top:692px}
-.footer-content{height:960px;border-color:var(--refined-rule)}
-.footer-introduction{top:48px;width:500px}
-.footer-introduction h2{font-size:21px;letter-spacing:-.5px}
-.footer-introduction p{margin-top:14px;font-size:17px;line-height:1.75;color:#666d77}
-.footer-directory{top:36px}
-.footer-directory a,.footer-directory button{height:56px;border-color:var(--refined-rule);font-size:17px;transition:color .25s,padding-left .3s var(--refined-ease)}
-.footer-directory a:hover,.footer-directory button:hover{padding-left:6px}
-.footer-brand{top:278px;width:222px;height:50px}
-.footer-search{top:366px;border-color:var(--refined-rule);transition:border-color .25s}
-.footer-search:focus-within{border-color:var(--accent)}
-.footer-search input{font-size:18px}
-.site-footer .search-status{top:424px;font-size:14px}
-.footer-support-links{top:316px}
-.footer-support-links button{min-height:40px;font-size:15px;color:#565d67}
-.footer-socials{top:326px;gap:20px}
-.footer-information{top:560px;font-size:12px;line-height:1.7;color:#858b94}
-.footer-bottomline{top:626px;padding-top:20px;border-color:var(--refined-rule);font-size:12px;color:#858b94}
-.site-footer .footer-motto{font-size:190px;letter-spacing:-3.5px}
-.site-footer .back-to-top{width:140px;height:140px;top:calc(var(--footer-motto-top) + 51.85px);transition:transform .35s var(--refined-ease)}
-.site-footer .back-to-top:hover{transform:translate(4px,-4px)}
-@media(prefers-reduced-motion:reduce){.hero-scroll-cue,.hero-scroll-cue::before,.editorial-image img,.editorial-image::after,.business-option,.business-name,.business-option::after,.partner-controls button,.footer-directory a,.footer-directory button,.site-footer .back-to-top{transition:none!important;animation:none!important}}
+@media(prefers-reduced-motion:reduce){.hero-scroll-cue,.hero-scroll-cue::before,.editorial-image img,.editorial-image::after,.business-option,.business-name,.business-option::after,.partner-controls button,.site-footer .back-to-top{transition:none!important;animation:none!important}}
 
 /* V6: quiet, consistent navigation feedback and an editorial newsroom rhythm.
    Floating geometry, logo alignment, routing and scroll ownership stay in the
@@ -935,28 +910,6 @@ body[data-page][data-nav-state] #navigation-overlay #full-menu{
   #stage .business-option .business-description { grid-column: 2; grid-row: 2; font-size: 11px !important; line-height: 1.5 !important; white-space: normal !important; }
   #stage #business-card { position: relative !important; inset: auto !important; width: 65% !important; height: auto !important; aspect-ratio: 504 / 515; margin: 28px 0 0 auto !important; }
 
-  #stage .site-footer { margin-bottom: 0 !important; padding-bottom: 30px !important; }
-  #stage .footer-content { position: relative !important; width: 100% !important; height: auto !important; display: flex !important; flex-direction: column; gap: 26px; padding-top: 26px !important; transform: none !important; }
-  #stage .footer-content > :not(.back-to-top) { position: relative !important; inset: auto !important; width: 100% !important; height: auto !important; max-width: 100% !important; margin: 0 !important; transform: none !important; }
-  #stage .footer-introduction h2 { font-size: 17px !important; }
-  #stage .footer-introduction p { margin-top: 10px !important; font-size: 13px !important; line-height: 1.8 !important; }
-  #stage .footer-directory { grid-template-columns: 1fr 1fr !important; gap: 20px !important; }
-  #stage .footer-directory :is(a, button) { height: 46px !important; font-size: 13px !important; }
-  #stage .footer-content > .footer-brand { width: 170px !important; height: 38px !important; }
-  #stage .footer-search { min-height: 42px; padding-bottom: 8px !important; }
-  #stage .footer-search input { font-size: 14px !important; }
-  #stage .search-status { font-size: 12px !important; line-height: 1.6 !important; }
-  #stage .search-status:empty { display: none !important; }
-  #stage .footer-support-links { grid-template-columns: 1fr !important; gap: 0 !important; }
-  #stage .footer-support-links button { min-height: 36px !important; font-size: 12px !important; white-space: normal !important; }
-  #stage .footer-socials { justify-content: flex-start; gap: 22px !important; }
-  #stage .footer-information { font-size: 10px !important; line-height: 1.8 !important; }
-  #stage .footer-bottomline { display: flex !important; flex-direction: column; gap: 12px !important; padding: 20px 0 0 !important; font-size: 10px !important; line-height: 1.6 !important; }
-  #stage .footer-bottomline address { white-space: normal !important; }
-  #stage .footer-policies { flex-wrap: wrap; gap: 12px !important; white-space: normal !important; }
-  #stage .site-footer .footer-motto { width: calc(100% - 38px) !important; padding: 0 0 .14em !important; font-size: clamp(30px, 9vw, 62px) !important; line-height: 1 !important; letter-spacing: -1px !important; white-space: nowrap !important; color: #09090b !important; background: none !important; -webkit-text-fill-color: #09090b !important; }
-  #stage .site-footer .back-to-top { position: absolute !important; inset: auto 0 5px auto !important; width: 30px !important; height: 30px !important; }
-
   /* The existing Newsroom route shares the same phone viewport. */
   #newsroom-page {
     position: relative !important;
@@ -964,7 +917,7 @@ body[data-page][data-nav-state] #navigation-overlay #full-menu{
     width: 100% !important;
     height: auto !important;
     min-height: 100vh;
-    padding: 96px 20px 64px;
+    padding: 96px 20px 0;
     transform: none !important;
     overflow: hidden !important;
     --newsroom-content-width: 100%;
@@ -1499,54 +1452,19 @@ body[data-page][data-nav-state] #navigation-overlay #full-menu{
 </div>
         </figure>
       </section>
-      <footer class="site-footer" id="contact" aria-label="넥스트증권 연락처와 사이트 메뉴" data-search-label="고객센터 · 연락처">
+      <footer class="site-footer" id="contact" aria-label="넥스트증권 고객지원 및 정책" data-search-label="고객센터 · 연락처">
         <div class="footer-content">
-        <div class="footer-introduction">
-          <h2>투자의 새로운 기준을 세우다</h2>
-          <p>넥스트증권은 AI 기술과 금융의 전문성을 바탕으로 투자자와 시장을 연결합니다. 더 빠르고 안정적인 금융 환경을 위한 새로운 기준을 만들어갑니다.</p>
-        </div>
-        <nav class="footer-directory" aria-label="하단 사이트 메뉴">
-          <div><a href="#about">회사소개</a><a href="#business">사업소개</a><button type="button" data-nav-category="careers">채용</button></div>
-          <div><a href="#trust">경영정보</a><button type="button" data-nav-category="customer">고객센터</button><a href="#/newsroom" data-nav-page="newsroom">뉴스룸</a></div>
-        </nav>
-        <a class="footer-brand" href="#stage" aria-label="Next Securities, 페이지 맨 위로"><svg width="176" height="39" viewBox="0 0 176 39" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M11.3239 0.454445C16.8913 0.221523 22.6604 0.548852 28.2459 0.416218C28.8234 0.402462 31.5109 0.322758 31.7793 0.750586C31.6483 1.87424 22.6723 16.8752 21.3686 19.4104C20.6551 17.5728 17.5715 13.2113 16.2255 11.5786C15.5463 10.7546 14.0854 13.349 13.7752 13.8546C13.2278 15.0899 5.72021 28.1968 5.3101 28.4722C5.21222 28.4526 5.12768 28.4361 5.03968 28.3867C4.44883 28.0544 0.393244 20.8995 0.110633 19.9753C-0.122933 19.2119 0.033233 18.8255 0.392614 18.1425C2.40712 14.3143 4.68282 10.5897 6.8328 6.8347C7.7469 5.23816 9.05893 2.49834 10.1416 1.17978C10.4819 0.765394 10.8203 0.610811 11.3239 0.454445Z" fill="black"/>
-<path d="M37.5014 10.2178C37.5842 10.2359 37.6654 10.2553 37.7455 10.2839C37.9011 10.3395 38.0131 10.4263 38.1112 10.5584C38.8725 11.5831 39.3872 12.7695 40.0276 13.868C40.8687 15.311 41.8978 16.7587 42.5804 18.2788C42.8113 18.7927 43.0026 19.3722 42.7892 19.9209C42.2816 21.2267 33.0224 37.408 32.5878 37.7588C32.2275 38.0498 31.8817 38.2207 31.4194 38.2732C30.1698 38.4152 28.8395 38.3282 27.5817 38.3251L20.8098 38.3176L15.1667 38.3224C14.3195 38.3266 11.8969 38.5535 11.4063 37.944C11.2305 37.3713 11.6085 36.8011 11.8805 36.2753C12.3921 35.2171 13.5099 33.3882 14.1212 32.3128L18.9305 23.8891C19.5894 22.7349 20.9707 20.5099 21.3516 19.4042C23.1085 21.8746 24.5319 24.6255 26.3634 27.0355C26.974 27.6013 27.8998 26.9243 28.1763 26.4343C30.2773 22.711 32.3974 18.9806 34.5194 15.2674C35.2747 13.9456 36.5394 11.4108 37.4356 10.2981L37.5014 10.2178Z" fill="black"/>
-<path d="M47.9629 13.8845C49.2955 13.8669 50.6283 13.8766 51.9604 13.9135C52.6611 15.3826 53.5491 16.8982 54.2959 18.3694C54.9111 19.5813 55.6378 21.195 56.3805 22.2829C56.2834 19.4958 56.321 16.757 56.3137 13.9703L58.9831 13.897C58.9403 16.9206 59.0089 19.9554 58.9657 22.9806C58.9531 23.863 58.9432 24.7644 58.9796 25.6449C57.6299 25.6187 56.2343 25.63 54.8806 25.6233C54.6756 25.0933 54.2981 24.4364 54.0199 23.9208C52.8093 21.6775 51.7334 19.3162 50.5104 17.0858C50.4742 17.7447 50.6027 19.4115 50.6203 20.2114C50.6583 21.937 50.555 23.9555 50.6731 25.6405L47.916 25.629C48.0961 21.9193 47.8606 17.6888 47.9629 13.8845Z" fill="black"/>
-<path d="M96.5737 13.7961C98.6153 13.6512 99.1078 13.9857 100.969 14.637C100.58 15.461 100.246 16.1327 99.9753 17.0016C99.0595 16.4876 96.8604 15.819 95.9509 16.7659C95.8322 16.8892 95.8879 16.9702 95.91 17.1424C96.4393 17.9575 98.3695 18.7317 99.2465 19.2527C101.789 20.7627 101.415 23.9552 98.9629 25.2932C98.4903 25.5511 97.94 25.6377 97.4191 25.7409C95.5949 25.8855 94.5877 25.7463 92.877 25.169C92.9179 24.2531 92.9043 23.2986 92.9043 22.3787C94.4082 23.0077 95.4416 23.2957 97.0599 23.2902C97.5451 22.9915 97.7604 22.916 97.8938 22.3814C97.5451 20.7635 93.0229 20.6357 92.9631 17.8215C92.9095 15.3581 94.1141 13.9779 96.5737 13.7961Z" fill="black"/>
-<path d="M64.3152 16.5121C68.8845 16.1182 69.5486 18.0037 69.6202 22.0323C67.8279 21.929 65.8081 22.0093 63.948 21.9391C64.5355 23.403 65.1378 23.8418 66.8535 23.6597C67.6488 23.5753 68.3405 23.2793 69.0449 22.9066C69.1 23.3965 69.0403 24.7149 69.0276 25.2702C68.9353 25.2998 68.8428 25.3285 68.7499 25.3562C67.007 25.8753 64.7589 26.0876 63.0413 25.1972C60.734 24.0011 60.5251 20.4638 61.6376 18.3796C62.1668 17.388 63.2171 16.7857 64.3152 16.5121ZM66.1739 19.989C66.605 19.9648 66.5923 20.0358 66.8705 19.8094C66.9517 18.8351 65.7827 18.4751 64.9536 18.5969C64.5545 18.9248 63.9367 19.3448 64.3331 19.8592C64.9179 20.1019 65.515 20.0036 66.1739 19.989Z" fill="black"/>
-<path d="M105.617 16.5108C105.803 16.4938 105.99 16.4832 106.177 16.4791C110.375 16.3515 110.85 18.4625 110.884 22.0343C110.047 21.9981 105.851 21.7946 105.41 22.1228C105.396 22.3861 105.425 22.3647 105.512 22.5818C106.037 23.882 107.187 23.7796 108.362 23.6028C109.128 23.4876 109.556 23.2679 110.228 22.9352C110.468 23.2637 110.322 24.7466 110.302 25.2391C100.436 28.3796 100.431 17.5086 105.617 16.5108ZM105.262 19.9627C105.995 19.9996 106.611 20.0091 107.346 19.9997C107.738 19.9743 107.764 20.038 108.037 19.8225C108.184 18.8548 107.061 18.5049 106.279 18.5C105.704 19.016 105.582 19.2618 105.262 19.9627Z" fill="black"/>
-<path d="M161.319 16.5073C165.77 16.0926 166.481 18.165 166.466 22.0357C164.861 21.9178 162.555 21.9805 160.869 21.9601C160.953 22.1823 161.039 22.396 161.142 22.6107C161.97 24.3487 164.485 23.6437 165.775 22.9918L165.871 23.0552C165.989 23.3775 165.929 24.83 165.922 25.2633C161.822 26.499 157.505 25.8193 157.909 20.5294C158.07 18.4206 159.195 16.8895 161.319 16.5073ZM163.113 19.9953C163.483 19.9532 163.473 20.0127 163.735 19.798C163.87 18.826 162.583 18.5217 161.821 18.5686C161.414 18.9876 161.126 19.1871 161.125 19.7511C161.521 20.1862 162.545 19.9851 163.113 19.9953Z" fill="black"/>
-<path d="M127.253 16.5956L130.257 16.583L130.24 20.2158C130.236 21.9626 130.192 23.9027 130.259 25.6338L127.857 25.6121C127.767 25.192 127.607 24.694 127.484 24.2746C126.026 26.6519 122.032 26.2178 121.625 23.5518C121.315 21.5251 121.471 18.6876 121.471 16.5958L124.562 16.5904C124.546 18.1136 123.721 26.0504 127.014 22.5634C127.39 20.6735 127.267 18.5474 127.253 16.5956Z" fill="black"/>
-<path d="M70.3027 16.5762C71.4224 16.6004 72.6502 16.579 73.777 16.5796C74.1529 17.5547 74.7629 18.0861 75.1932 19.3665C75.5413 18.3937 76.1363 17.4989 76.6539 16.5887L80.0358 16.5906C79.621 17.4505 77.8098 20.2515 77.2372 21.0777C77.8588 21.8208 79.4893 24.5411 80.0771 25.4862L79.9974 25.626L76.6824 25.6209C76.2251 24.6368 75.4754 23.6055 75.238 22.7061C74.7881 23.7354 74.1522 24.5471 73.6603 25.6455C72.5496 25.6142 71.3608 25.6379 70.2441 25.6404C70.7459 24.6503 72.4545 21.9456 73.1137 21.0651C72.5886 20.3836 70.7472 17.3677 70.3027 16.5762Z" fill="black"/>
-<path d="M170.637 16.5126C172.348 16.3025 173.44 16.5845 174.965 17.2604C174.53 17.9654 174.321 18.4396 174.083 19.222C173.513 18.9249 171.006 18.0171 170.775 18.98C171.134 19.6738 175.023 20.4537 175.035 22.3313C175.05 24.6057 174.155 25.4167 172.074 25.7618C170.361 25.8298 169.555 25.7698 167.916 25.3517C167.935 24.5285 167.936 23.7048 167.919 22.8815C168.856 23.1958 171.349 24.0856 172.105 23.3407L172.099 23.1275C171.598 22.3287 170.082 21.9258 169.27 21.387C168.779 21.0618 168.635 20.9459 168.196 20.5411C167.579 18.3192 168.206 16.8856 170.637 16.5126Z" fill="black"/>
-<path d="M147.055 14.8002L148.968 14.7891C148.969 15.3972 148.957 16.0053 148.933 16.613C149.644 16.5797 150.431 16.5881 151.149 16.583C151.136 17.4023 151.11 18.1853 151.185 19.0021C150.447 18.9587 149.709 18.923 148.971 18.895C148.956 19.6892 148.918 20.5578 148.891 21.3505C148.814 23.5326 149.472 23.603 151.302 23.1064C151.272 23.8533 151.267 24.6009 151.284 25.3481C149.609 26.0233 148.04 25.9905 146.487 25.0842C145.276 22.9356 146.321 19.6502 145.717 18.9503C145.4 18.9469 145.188 18.974 144.915 18.8057C144.68 18.4264 144.747 18.2069 144.721 17.7108C146.717 16.5556 145.947 16.1984 147.055 14.8002Z" fill="black"/>
-<path d="M115.905 16.5098C116.737 16.4581 119.366 16.3893 119.827 17.1818C119.858 17.576 119.293 18.9637 119.121 19.4417C116.93 18.5152 114.934 18.7504 115.416 21.8564C115.54 22.6594 116.015 23.0309 116.7 23.4219C117.85 23.3495 118.417 23.0648 119.494 22.7936C119.575 22.7734 119.618 22.8535 119.689 22.9189L119.665 23.4709C119.665 24.0376 119.629 24.6085 119.599 25.1748C111.143 28.3709 110.049 17.8824 115.905 16.5098Z" fill="black"/>
-<path d="M82.9732 14.8128L84.8664 14.8008C84.8959 15.4608 84.8835 15.937 84.8552 16.5903L87.1914 16.5877C87.1714 17.3758 87.1283 18.142 87.2218 18.9248C86.4299 18.9157 85.6402 18.9496 84.8479 18.977C84.9166 20.1222 84.7562 21.3142 84.9018 22.4237C85.0836 23.8123 86.5224 23.3346 87.3478 23.0885L87.2974 25.1772L87.2565 25.3141C86.3764 26.0686 83.8649 25.7841 82.8368 25.359C81.336 23.4578 82.0118 21.9833 81.8946 19.7443C81.8217 18.3531 81.5302 19.3095 80.848 18.6947C80.4092 17.6183 81.763 17.1011 82.2369 16.5173C82.4355 16.2726 82.8406 15.1613 82.9732 14.8128Z" fill="black"/>
-<path d="M137.136 16.5039C137.638 16.4652 138.238 16.482 138.749 16.483L138.48 19.4223C134.325 18.9887 135.47 22.5152 135.468 25.6361L132.458 25.6277C132.478 22.6163 132.474 19.6048 132.443 16.5935L134.827 16.5975C134.938 17.1209 135.093 17.6492 135.237 18.1658C135.868 17.4498 136.28 16.9795 137.136 16.5039Z" fill="black"/>
-<path d="M152.875 16.5935C153.903 16.5132 154.99 16.561 156.025 16.585C155.952 19.5365 155.993 22.644 155.959 25.6199C155.597 25.6754 153.385 25.6273 152.888 25.6242C153.049 23.2011 152.925 19.097 152.875 16.5935Z" fill="black"/>
-<path d="M140.119 16.5761C141.13 16.5661 142.142 16.5691 143.153 16.5849C143.066 19.1383 143.077 23.0973 143.151 25.6387C142.166 25.6187 141.14 25.633 140.151 25.633C140.17 22.8965 140.263 19.2489 140.119 16.5761Z" fill="black"/>
-<path d="M141.082 13.0284C141.336 13.0171 142.096 12.9765 142.306 13.0615C143.732 13.6411 143.676 15.0411 142.342 15.6325C139.862 16.0146 139.133 13.5969 141.082 13.0284Z" fill="black"/>
-<path d="M153.711 13.0276C154.001 13.0072 154.883 12.9651 155.105 13.0713C156.739 13.8536 156.382 15.0202 155.02 15.6757C153.174 15.9234 151.836 14.3053 153.711 13.0276Z" fill="black"/>
-</svg>
-</a>
-        <form class="footer-search" id="site-search" role="search">
-          <input id="search-query" type="search" aria-label="사이트 내 검색" placeholder="간편하게 검색어를 입력해보세요" autocomplete="off">
-          <button type="submit" aria-label="검색"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="6.5" stroke="currentColor" stroke-width="1.4"/><path d="m15 15 5 5" stroke="currentColor" stroke-width="1.4"/></svg></button>
-        </form>
-        <p class="search-status" id="search-status" role="status"></p>
-        <nav class="footer-support-links" aria-label="금융 소비자 지원">
-          <div><button type="button" data-nav-category="customer">금융소비자보호 및 민원사항</button><button type="button" data-nav-category="customer">온라인거래 장애 발생시 대처방법</button><button type="button" data-nav-category="customer">보호금융상품등록부</button></div>
-          <div><button type="button" data-nav-category="customer">채무조정요청권 안내</button><button type="button" data-nav-category="customer">영상정보처리기기 운영관리 방침</button><button type="button" data-nav-category="customer">자료열람청구</button></div>
-        </nav>
-        <div class="footer-socials" aria-label="소셜 채널">
-          <span role="img" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="4" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/><circle cx="17" cy="7" r="1.2" fill="currentColor"/></svg></span>
-          <span class="footer-social-word" role="img" aria-label="LinkedIn">in</span><span class="footer-social-word" role="img" aria-label="X">𝕏</span><span class="footer-social-word" role="img" aria-label="Facebook">f</span>
-        </div>
-        <div class="footer-information"><p>본 웹사이트에 명시된 체결 속도(0.012ms) 및 시스템 가용성(99.999%) 지표는 당사의 코어 테스트 환경 및 특정 통신 인프라 기준이며, 고객의 네트워크 환경 및 시장 상황에 따라 실제 체결 결과는 달라질 수 있습니다. 금융투자상품은 자산가격 변동, 환율 변동 등에 따라 투자원금의 손실(0~100%)이 발생할 수 있으며 그 손실은 투자자에게 귀속됩니다. 당사는 금융투자상품에 관하여 충분히 설명할 의무가 있으며, 투자자는 투자에 앞서 그러한 설명을 충분히 들으시기 바랍니다. 넥스트증권 준심필 제2026-XXXX호.</p></div>
-        <div class="footer-bottomline"><p class="copyright">Copyright © 2025 Next securities. All rights reserved.</p><address>서울특별시 영등포구 국제금융로 10 Three IFC 15층</address><nav class="footer-policies" aria-label="개인정보 및 신용정보 정책"><button type="button" data-nav-category="customer">개인정보처리방침</button><button type="button" data-nav-category="customer">신용정보 활용체제 공시</button></nav></div>
-        <p class="footer-motto">The next is yours</p>
-        <a class="back-to-top" href="#stage" aria-label="페이지 맨 위로"><svg viewBox="0 0 160 160" fill="none" aria-hidden="true"><path d="M28 132 132 28M48 28h84v84" stroke="currentColor" stroke-width="23" stroke-linejoin="miter"/></svg></a>
+          <nav class="footer-support-links" aria-label="금융 소비자 지원">
+            <div><button type="button" data-nav-category="customer">금융소비자보호 및 민원사항</button><button type="button" data-nav-category="customer">온라인거래 장애 발생시 대처방법</button><button type="button" data-nav-category="customer">보호금융상품등록부</button></div>
+            <div><button type="button" data-nav-category="customer">채무조정요청권 안내</button><button type="button" data-nav-category="customer">영상정보처리기기 운영관리 방침</button><button type="button" data-nav-category="customer">자료열람청구</button></div>
+          </nav>
+          <div class="footer-information"><p>본 웹사이트에 명시된 체결 속도(0.012ms) 및 시스템 가용성(99.999%) 지표는 당사의 코어 테스트 환경 및 특정 통신 인프라 기준이며, 고객의 네트워크 환경 및 시장 상황에 따라 실제 체결 결과는 달라질 수 있습니다. 금융투자상품은 자산가격 변동, 환율 변동 등에 따라 투자원금의 손실(0~100%)이 발생할 수 있으며 그 손실은 투자자에게 귀속됩니다. 당사는 금융투자상품에 관하여 충분히 설명할 의무가 있으며, 투자자는 투자에 앞서 그러한 설명을 충분히 들으시기 바랍니다. 넥스트증권 준심필 제2026-XXXX호.</p></div>
+          <div class="footer-bottomline">
+            <p class="copyright">Copyright © 2025 Next securities. All rights reserved.</p>
+            <nav class="footer-policies" aria-label="개인정보 및 신용정보 정책"><button type="button" data-nav-category="customer">개인정보처리방침</button><button type="button" data-nav-category="customer">신용정보 활용체제 공시</button></nav>
+          </div>
+          <p class="footer-motto" lang="en">The next is yours</p>
+          <a class="back-to-top" href="#stage" aria-label="페이지 맨 위로"><svg viewBox="0 0 160 160" fill="none" aria-hidden="true"><path d="M28 132 132 28M48 28h84v84" stroke="currentColor" stroke-width="23" stroke-linejoin="miter"/></svg></a>
         </div>
       </footer>
 
@@ -1684,6 +1602,24 @@ body[data-page][data-nav-state] #navigation-overlay #full-menu{
   <div class="news-edition-footer"><span lang="en">NEXT SECURITIES · NEWS &amp; INSIGHTS</span><a href="https://www.nextsecurities.com/ko/news" target="_blank" rel="noopener noreferrer">뉴스 전체보기 ↗</a></div>
 </div>
 
+      <div class="newsroom-footer-frame">
+      <footer class="site-footer" id="newsroom-contact" aria-label="넥스트증권 고객지원 및 정책" data-search-label="고객센터 · 연락처">
+        <div class="footer-content">
+          <nav class="footer-support-links" aria-label="금융 소비자 지원">
+            <div><button type="button" data-nav-category="customer">금융소비자보호 및 민원사항</button><button type="button" data-nav-category="customer">온라인거래 장애 발생시 대처방법</button><button type="button" data-nav-category="customer">보호금융상품등록부</button></div>
+            <div><button type="button" data-nav-category="customer">채무조정요청권 안내</button><button type="button" data-nav-category="customer">영상정보처리기기 운영관리 방침</button><button type="button" data-nav-category="customer">자료열람청구</button></div>
+          </nav>
+          <div class="footer-information"><p>본 웹사이트에 명시된 체결 속도(0.012ms) 및 시스템 가용성(99.999%) 지표는 당사의 코어 테스트 환경 및 특정 통신 인프라 기준이며, 고객의 네트워크 환경 및 시장 상황에 따라 실제 체결 결과는 달라질 수 있습니다. 금융투자상품은 자산가격 변동, 환율 변동 등에 따라 투자원금의 손실(0~100%)이 발생할 수 있으며 그 손실은 투자자에게 귀속됩니다. 당사는 금융투자상품에 관하여 충분히 설명할 의무가 있으며, 투자자는 투자에 앞서 그러한 설명을 충분히 들으시기 바랍니다. 넥스트증권 준심필 제2026-XXXX호.</p></div>
+          <div class="footer-bottomline">
+            <p class="copyright">Copyright © 2025 Next securities. All rights reserved.</p>
+            <nav class="footer-policies" aria-label="개인정보 및 신용정보 정책"><button type="button" data-nav-category="customer">개인정보처리방침</button><button type="button" data-nav-category="customer">신용정보 활용체제 공시</button></nav>
+          </div>
+          <p class="footer-motto" lang="en">The next is yours</p>
+          <a class="back-to-top" href="#newsroom-page" aria-label="페이지 맨 위로"><svg viewBox="0 0 160 160" fill="none" aria-hidden="true"><path d="M28 132 132 28M48 28h84v84" stroke="currentColor" stroke-width="23" stroke-linejoin="miter"/></svg></a>
+        </div>
+      </footer>
+
+      </div>
     </main>
   </div>
   <div id="navigation-backdrop" aria-hidden="true"></div>
@@ -2757,24 +2693,6 @@ body[data-page][data-nav-state] #navigation-overlay #full-menu{
     });
   });
 
-  const searchForm = document.querySelector('#site-search');
-  searchForm.addEventListener('submit',event=>{
-    event.preventDefault();
-    const query = document.querySelector('#search-query').value.trim();
-    const status = document.querySelector('#search-status');
-    if(!query){status.textContent='검색어를 입력해주세요.';return}
-    const term=query.toLocaleLowerCase();
-    const sections=[...document.querySelectorAll('[data-search-label]')];
-    const result=sections.find(section=>{
-      const accessible=section.cloneNode(true);
-      accessible.querySelectorAll('[aria-hidden="true"]').forEach(element=>element.remove());
-      return (section.dataset.searchLabel+' '+accessible.textContent).toLocaleLowerCase().includes(term);
-    });
-    if(!result){status.textContent=`‘${query}’에 대한 검색 결과가 없습니다.`;return}
-    status.textContent=`‘${query}’ 관련 ${result.dataset.searchLabel}로 이동합니다.`;
-    window.nextStandardDemo.reset();
-    moveTo(result);
-  });
   window.nextPageDemo = {
     selectBusiness,
     showQuote,
@@ -3167,7 +3085,7 @@ body[data-page][data-nav-state] #navigation-overlay #full-menu{
   function handleNavigation(event) {
     const control = event.target.closest('[data-nav-mega],[data-nav-category],[data-nav-section],[data-nav-business],[data-nav-detail],[data-nav-action],[data-nav-page]');
     if (!control || !control.matches('a,button')) return;
-    const editorialCategory = control.hasAttribute('data-nav-category') && control.closest('#explore,#contact');
+    const editorialCategory = control.hasAttribute('data-nav-category') && control.closest('#explore,.site-footer');
     if (!control.dataset.navPage && !header.contains(control) && !overlay.contains(control) && !editorialCategory) return;
     event.preventDefault();event.stopImmediatePropagation();
     if (control.dataset.navMega && !control.dataset.navPage && !control.dataset.navSection) {
@@ -3797,7 +3715,8 @@ function t(t,i,e){return Math.max(t,Math.min(i,e))}var i=class{isRunning=!1;valu
   const panels=[...section.querySelectorAll('.editorial-panel')];
   const captions=panels.map(panel=>panel.querySelector('.editorial-description'));
   const reduced=matchMedia('(prefers-reduced-motion:reduce)');
-  const TOP=4040,DESIGN_HEIGHT=1080,SECTION_GAP=160,FOOTER_GAP=1000,FOOTER_HEIGHT=960;
+  const TOP=4040,DESIGN_HEIGHT=1080,SECTION_GAP=160,FOOTER_GAP=1000;
+  const FOOTER_HEIGHT=parseFloat(getComputedStyle(document.querySelector('#contact')).getPropertyValue('--footer-height'));
   const clamp=(value,min=0,max=1)=>Math.max(min,Math.min(max,value));
   let scale=1,blockHeight=3600,stickyHeight=1013.333,extra=2400,start=4594,end=7060;
   let cardWidth=600,finalCardWidth=376,cardGap=40,finalCardGap=32;
@@ -4138,7 +4057,7 @@ function t(t,i,e){return Math.max(t,Math.min(i,e))}var i=class{isRunning=!1;valu
   const footer=document.querySelector('#contact'),motto=footer.querySelector('.footer-motto');
   const reduced=matchMedia('(prefers-reduced-motion:reduce)');
   const clamp=value=>Math.max(0,Math.min(1,value));
-  const BASE_HEIGHT=960;
+  const BASE_HEIGHT=parseFloat(getComputedStyle(footer).getPropertyValue('--footer-height'));
   let progress=0,start=0,end=0,pin=0,frame=null,extraHeight=0,scale=1,distance=0;
   const isStatic=()=>reduced.matches||document.body.dataset.revealStatic==='true';
   function measure(){
